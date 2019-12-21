@@ -268,7 +268,7 @@ import java.nio.ByteBuffer;
         encryptedDataSizes[i] = scratch.readUnsignedIntToInt();
       }
     } else {
-      int addedHeaderSize = mimeType.equals(MimeTypes.AUDIO_AC4) ? 7 : 0;
+      int addedHeaderSize = MimeTypes.AUDIO_AC4.equals(mimeType) ? 7 : 0;
       clearDataSizes[0] = addedHeaderSize;
       encryptedDataSizes[0] = extrasHolder.size - (int) (offset - extrasHolder.offset)
           - addedHeaderSize;
