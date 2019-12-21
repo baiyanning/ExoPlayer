@@ -531,7 +531,7 @@ public class PlayerActivity extends AppCompatActivity
 
   private HttpMediaDrmCallback createMediaDrmCallback(
       String licenseUrl, String[] keyRequestPropertiesArray) {
-    HttpDataSource.Factory licenseDataSourceFactory =
+    /*HttpDataSource.Factory licenseDataSourceFactory =
         ((DemoApplication) getApplication()).buildHttpDataSourceFactory();
     HttpMediaDrmCallback drmCallback =
         new HttpMediaDrmCallback(licenseUrl, licenseDataSourceFactory);
@@ -540,7 +540,9 @@ public class PlayerActivity extends AppCompatActivity
         drmCallback.setKeyRequestProperty(keyRequestPropertiesArray[i],
             keyRequestPropertiesArray[i + 1]);
       }
-    }
+    }*/
+    String keyResponse = "{\"keys\":[{\"kty\":\"oct\",\"k\":\""+"CiR7B1HL8agn4v7fuHR5og"+"\",\"kid\":\""+"kTQZUWlrXhuiMkOezsHxKg"+"\"}],\"type\":\"temporary\"}";
+    LocalMediaDrmCallback drmCallback = new LocalMediaDrmCallback(keyResponse.getBytes()); 
     return drmCallback;
   }
 

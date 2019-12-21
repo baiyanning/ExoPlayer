@@ -1,5 +1,32 @@
 [
   {
+    "name": "Dolby AC-4 DRM Playback Test",
+    "samples": [
+      {
+        "name": "Clearkey AC-4 DRM on-Demand Profile",
+        "uri": "http://bjo-disc.dolby.net/ondel/usr/lzzhan/shaka/DRM_clear_ac4_3.mpd",
+        "extension": "mpd",
+        "drm_scheme": "clearkey"
+      },
+      {
+        "name": "Clearkey AC-4 DRM Live Profile",
+        "uri": "http://bjo-disc.dolby.net/ondel/usr/lzzhan/shaka/DRM_clear_ac4_live.mpd",
+        "extension": "mpd",
+        "drm_scheme": "clearkey"
+      },
+      {
+        "name": "Clearkey AC-4 DRM HLS fMP4 on-demand Profile",
+        "uri": "http://bjo-disc.dolby.net/ondel/usr/lzzhan/shaka/hls_VOD/DRM_HLS_clear_ac4_master.m3u8",
+        "drm_scheme": "clearkey"
+      },
+      {
+        "name": "Clearkey AC-4 DRM HLS fMP4 Live Profile",
+        "uri": "http://bjo-disc.dolby.net/ondel/usr/lzzhan/shaka/hls_live/DRM_HLS_live_clear_ac4_master.m3u8",
+        "drm_scheme": "clearkey"
+      }
+    ]
+  },
+  {
     "name": "YouTube DASH",
     "samples": [
       {
