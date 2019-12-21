@@ -45,6 +45,7 @@ import com.google.android.exoplayer2.drm.DrmSessionManager;
 import com.google.android.exoplayer2.drm.ExoMediaCrypto;
 import com.google.android.exoplayer2.drm.FrameworkMediaDrm;
 import com.google.android.exoplayer2.drm.HttpMediaDrmCallback;
+import com.google.android.exoplayer2.drm.LocalMediaDrmCallback;
 import com.google.android.exoplayer2.drm.MediaDrmCallback;
 import com.google.android.exoplayer2.mediacodec.MediaCodecRenderer.DecoderInitializationException;
 import com.google.android.exoplayer2.mediacodec.MediaCodecUtil.DecoderQueryException;
@@ -529,7 +530,7 @@ public class PlayerActivity extends AppCompatActivity
     }
   }
 
-  private HttpMediaDrmCallback createMediaDrmCallback(
+  private LocalMediaDrmCallback createMediaDrmCallback(
       String licenseUrl, String[] keyRequestPropertiesArray) {
     /*HttpDataSource.Factory licenseDataSourceFactory =
         ((DemoApplication) getApplication()).buildHttpDataSourceFactory();
@@ -542,7 +543,7 @@ public class PlayerActivity extends AppCompatActivity
       }
     }*/
     String keyResponse = "{\"keys\":[{\"kty\":\"oct\",\"k\":\""+"CiR7B1HL8agn4v7fuHR5og"+"\",\"kid\":\""+"kTQZUWlrXhuiMkOezsHxKg"+"\"}],\"type\":\"temporary\"}";
-    LocalMediaDrmCallback drmCallback = new LocalMediaDrmCallback(keyResponse.getBytes()); 
+    LocalMediaDrmCallback drmCallback = new LocalMediaDrmCallback(keyResponse.getBytes());
     return drmCallback;
   }
 

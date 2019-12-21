@@ -23,6 +23,7 @@ import com.google.android.exoplayer2.extractor.TrackOutput.CryptoData;
 import com.google.android.exoplayer2.source.SampleQueue.SampleExtrasHolder;
 import com.google.android.exoplayer2.upstream.Allocation;
 import com.google.android.exoplayer2.upstream.Allocator;
+import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.io.EOFException;
 import java.io.IOException;
@@ -119,7 +120,7 @@ import java.nio.ByteBuffer;
       String mimeType) {
     // Read encryption data if the sample is encrypted.
     if (buffer.isEncrypted()) {
-      readEncryptionData(buffer, extrasHolder, );
+      readEncryptionData(buffer, extrasHolder, mimeType);
     }
     // Read sample data, extracting supplemental data into a separate buffer if needed.
     if (buffer.hasSupplementalData()) {
